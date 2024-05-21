@@ -1,0 +1,60 @@
+Create DataBase FarmaxDB;
+Use FarmaxDB;
+CREATE TABLE Usuarios (
+    Id_Usuario int AUTO_INCREMENT PRIMARY KEY,
+    Nombre varchar(70) NOT NULL, 
+    ApellidoPaterno varchar(50),
+    ApellidoMaterno varchar(50),
+    Correo varchar(254) NOT NULL,
+    Telefono varchar(15),
+    Direccion varchar(255),
+    CodigoPostal int(5),
+    FechaNacimiento date,
+    Contraseña varchar(50) NOT NULL
+);
+
+CREATE TABLE Categorias(
+    Id_Categoria INT AUTO_INCREMENT PRIMARY KEY,
+    NombreCategoria varchar(45)
+);
+
+CREATE TABLE Productos(
+    Id_Producto INT AUTO_INCREMENT PRIMARY KEY,
+    Id_Categoria INT,
+    Nombre VARCHAR(45) NOT NULL,
+    Descripcion VARCHAR(150) NOT NULL,
+    Precio DECIMAL(10,2),
+    FOREIGN KEY (Id_Categoria) REFERENCES Categorias(Id_Categoria) -- Clave foránea hacia la tabla Categorias
+);
+
+CREATE TABLE Pedidos (
+    Id_Pedido int AUTO_INCREMENT PRIMARY KEY,
+    Id_Usuario int,
+    Id_Producto int,
+    FechaHora DATETIME,
+    Cantidad int,
+    PrecioUnitario DECIMAL(10, 2),
+    Total DECIMAL(12, 2),
+    FOREIGN KEY (Id_Usuario) REFERENCES Usuarios(Id_Usuario),  -- Clave foránea hacia la tabla Usuarios
+    FOREIGN KEY (Id_Producto) REFERENCES Productos(Id_Producto) -- Clave foránea hacia la tabla Productos
+);
+
+CREATE TABLE DetallesPedido(
+	Id_DetallePedido int AUTO_INCREMENT PRIMARY KEY,
+    Id_Pedido int,
+    Id_Producto int,
+    PrecioUnitario DECIMAL (10,2),
+    Cantidad int,
+    FOREIGN KEY (Id_Pedido) REFERENCES Pedidos(Id_Pedido),      -- Clave foránea hacia la tabla Pedidos
+    FOREIGN KEY (Id_Producto) REFERENCES Productos(Id_Producto) -- Clave foránea hacia la tabla Productos
+);
+
+CREATE TABLE Envios(
+	Id_Envio INT AUTO_INCREMENT PRIMARY KEY,
+    Id_Pedido int,
+    Nombre varchar(10) NOT NULL,
+    Telefono int(15) NOT NULL,
+    Direccion varchar(40) NOT NULL,
+    CodigoPostal int(5),
+    FOREIGN KEY (Id_Pedido) REFERENCES Pedidos(Id_Pedido) -- Clave foránea hacia la tabla Pedidos
+);

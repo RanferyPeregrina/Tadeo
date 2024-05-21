@@ -1,0 +1,40 @@
+
+#ContenedorPrincipal{
+    margin-top: 50px;
+  }
+  
+#ContenedorSecundario{
+    border-width: 6px;
+    border-color: rgb(70, 69, 155);
+    border-style: solid;
+}
+
+  #Parte_Izquierda{
+    background-color: #30336E;
+    padding: 5%;
+    
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+    #Parte_Izquierda img{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+        max-height: 90%;
+
+    }
+  #Parte_Derecha{
+    padding: 5%;
+  }
+    #Boton_CrearCuenta{
+        margin-top: 1pc;
+        margin-left: auto;
+        margin-right: auto;
+
+        background-color: rgb(70, 69, 155);
+    }
+        #Boton_CrearCuenta button{
+            height: 3pc;
+            background-color: rgb(70, 69, 155);
+        }   

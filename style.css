@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(110, 42, 123);
+}
+
+.contenedor{
+    max-width: 50%;
+    margin:0;
+    text-align: center;
+    background-color:rgb(59, 122, 85);
+    color: rgb(198, 202, 210);
+    border-radius: 20px;
+    padding: 20px;
+}
+.border{
+    border-bottom: solid 3px; 
+    color:aqua
+}

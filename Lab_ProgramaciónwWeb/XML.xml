@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<integrantes>
+    <integrante1>
+        <nombre> Nombre Apellido <nombre>
+        <universidad>
+
+        </universidad>
+    </integrante1>
+
+    <integrante2>
+        <nombre> Nombre Apellido <nombre>
+        <universidad>
+
+        </universidad>
+    </integrante2>
+
+    <integrante3>
+        <nombre> Nombre Apellido <nombre>
+        <universidad>
+
+        </universidad>
+    </integrante3>
+
+    <integrante4>
+        <nombre> Nombre Apellido <nombre>
+        <universidad>
+
+        </universidad>
+    </integrante4>
+
+</integrantes>
